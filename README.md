@@ -1,7 +1,10 @@
 # LeetCode
+
 ```text
 cc.iszjq.leetcode
             LeetCodeQxx.java Qxx 表示 QuestionX 即第几题。
+            --algorithm
+            该包中为自己学习过程中实现的一些算法类
             --struct
             该包中为Leetcode上提供的数据结构类
             
