@@ -1,13 +1,13 @@
-package cc.iszjq.leetcode;
+package com.anacmer.learn.leetcode;
 
-import cc.iszjq.leetcode.struct.ListNode;
+import com.anacmer.learn.leetcode.struct.ListNode;
 
 /**
  * 输入：head = [1,2,3,4,5]
  * 输出：[5,4,3,2,1]
  */
 
-public class LeetCodeQ206 {
+public class Q206 {
 
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
@@ -20,7 +20,7 @@ public class LeetCodeQ206 {
         n3.next = n4;
         n4.next = n5;
 
-        LeetCodeQ206 q206 = new LeetCodeQ206();
+        Q206 q206 = new Q206();
         System.out.println(q206.reverseList(n1).toString());
     }
 

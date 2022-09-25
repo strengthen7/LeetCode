@@ -1,14 +1,14 @@
-package cc.iszjq.leetcode;
+package com.anacmer.learn.leetcode;
 
 import java.util.Arrays;
 
-public class LeetCodeQ1 {
+public class Q1 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{3,2,4};
         int target = 6;
-        LeetCodeQ1 leetCodeQ1 = new LeetCodeQ1();
-        System.out.println(Arrays.toString(leetCodeQ1.twoSum(nums, target)));
+        Q1 q1 = new Q1();
+        System.out.println(Arrays.toString(q1.twoSum(nums, target)));
     }
 
     public int[] twoSum(int[] nums, int target) {

@@ -1,4 +1,4 @@
-package cc.iszjq.leetcode.struct;
+package com.anacmer.learn.leetcode.struct;
 
 public class ListNode {
     //节点值

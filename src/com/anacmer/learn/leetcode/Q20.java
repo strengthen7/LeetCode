@@ -1,10 +1,10 @@
-package cc.iszjq.leetcode;
+package com.anacmer.learn.leetcode;
 
-public class LeetCodeQ20 {
+public class Q20 {
 
     public static void main(String[] args) {
-        LeetCodeQ20 leetCodeQ20 = new LeetCodeQ20();
-        System.out.println(leetCodeQ20.isValid("{[]}"));
+        Q20 q20 = new Q20();
+        System.out.println(q20.isValid("{[]}"));
     }
 
     public boolean isValid(String s) {

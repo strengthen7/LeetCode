@@ -1,19 +1,19 @@
-package cc.iszjq.leetcode;
+package com.anacmer.learn.leetcode;
 
-import cc.iszjq.leetcode.struct.ListNode;
+import com.anacmer.learn.leetcode.struct.ListNode;
 
 /**
  * 输入：head = [1,2,3,4,5]
  * 输出：[5,4,3,2,1]
  */
 
-public class LeetCodeQ21 {
+public class Q21 {
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1, new ListNode(3, new ListNode(5)));
         ListNode l2 = new ListNode(2, new ListNode(4, new ListNode(6)));
-        LeetCodeQ21 leetCodeQ21 = new LeetCodeQ21();
-        ListNode listNode = leetCodeQ21.mergeTwoLists(l1, l2);
+        Q21 q21 = new Q21();
+        ListNode listNode = q21.mergeTwoLists(l1, l2);
     }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

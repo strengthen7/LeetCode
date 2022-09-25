@@ -1,6 +1,6 @@
-package cc.iszjq.leetcode;
+package com.anacmer.learn.leetcode;
 
-public class LeetCodeQ912 {
+public class Q912 {
     public static void main(String[] args) {
         //直接使用快排
     }

@@ -1,13 +1,13 @@
-package cc.iszjq.leetcode;
+package com.anacmer.learn.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class LeetCodeQ70 {
+public class Q70 {
 
     public static void main(String[] args) {
-        LeetCodeQ70 leetCodeQ70 = new LeetCodeQ70();
-        System.out.println(leetCodeQ70.climbStairs(45));
+        Q70 q70 = new Q70();
+        System.out.println(q70.climbStairs(45));
     }
 
     //使用Map缓存重复的计算结果，否则会 Out Time

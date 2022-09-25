@@ -1,4 +1,4 @@
-package cc.iszjq.leetcode.algorithm;
+package com.anacmer.learn.leetcode.algorithm;
 
 public class BinarySearch {
 

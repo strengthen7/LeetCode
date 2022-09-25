@@ -1,12 +1,12 @@
-package cc.iszjq.leetcode;
+package com.anacmer.learn.leetcode;
 
 import java.util.Arrays;
 
-public class LeetCodeQ34 {
+public class Q34 {
 
     public static void main(String[] args) {
-        LeetCodeQ34 leetCodeQ34 = new LeetCodeQ34();
-        int[] ints = leetCodeQ34.searchRange(new int[]{1, 2, 3, 4, 5, 1, 2}, 2);
+        Q34 q34 = new Q34();
+        int[] ints = q34.searchRange(new int[]{1, 2, 3, 4, 5, 1, 2}, 2);
         System.out.println(Arrays.toString(ints));
     }
 
