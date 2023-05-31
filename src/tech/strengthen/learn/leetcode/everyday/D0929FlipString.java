@@ -1,0 +1,51 @@
+package tech.strengthen.learn.leetcode.everyday;
+
+import java.util.*;
+
+/**
+ * 字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。
+ * <p>
+ * 示例1:
+ * <p>
+ * 输入：s1 = "waterbottle", s2 = "erbottlewat"
+ * 输出：True
+ * <p>
+ * 来源：力扣（LeetCode）
+ * 链接：<a href="https://leetcode.cn/problems/string-rotation-lcci">...</a>
+ * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ * --
+ * <a href="https://leetcode.cn/problems/string-rotation-lcci/solution/by-7hao-3xfc/">...</a>
+ */
+public class D0929FlipString {
+
+    public boolean isFlipedString(String s1, String s2) {
+        if (s1.length() != s2.length()) return false;
+        char[] arr1 = s1.toCharArray();
+        char[] arr2 = s2.toCharArray();
+        int arrLength = arr2.length;
+        int remainNum = 0, j = 0;
+        for (char c : arr1) {
+            if (c == arr2[j]) {
+                j++;
+                remainNum = arrLength - j;
+            }
+        }
+        if (remainNum + j == arrLength) {
+            return s2.substring(arrLength - remainNum, arrLength)
+                    .equals(s1.substring(0, remainNum));
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+        D0929FlipString d0928NumK = new D0929FlipString();
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNextLine()) {
+            String[] s = scanner.nextLine().split(" ");
+            boolean flipedString = d0928NumK.isFlipedString(s[0], s[1]);
+            System.out.println(flipedString);
+        }
+    }
+    //LmMoLrUxaeSgUhqFsicojxzsbbBobkzkigNyzreunviUECVpPaWKUTMfgskTiirzDkLQFQcTmvdeKpeAvypDMTJTGZRcGOlbJDVFlXNmORIJjhhGyMdGnGpefjLinqwESmCexewgloibkZxeTydRnyFRyDPMyPumFjhjuGnNmCKhOnWPYfUBmlppeBcqhoggzPqXcpYRYIuFbCuxpbaScUGYZWZVQxnOChBPIbozFagLalTGGjjAJJnPiMPcMJMxlYfBJBqtejxqXqgHgcoLGqqIaORJrEQMbqlbzddjOWJOyFkksYvdxUBPbzYVrxMKOYPigNwtXWGBqtXxUOCuIpGigRErIkkYbdDKuXmHoIXXWIiisBLwWqdKporlfbcHZicevgpAUOkeiFIeaSoaeXlXGfHFzImzCYunHleAEkzfmAirrMeUGczkBfzHBnrrBoiXVXELXMjOEXkQYJWkzRfTMeAyEKJstkUAuwkywhpDreIfrwQJLWLdAmaSlCLKdGcCjbaPPyHcGNbskyZgRahgieOqmztbakPRBOUHLRSfquGjUtlfbRJfMlOiFKFQcYDJaMgOGlnEQmHtaYDRpcGamZlZqLrAIDdMRPvelfBykZWNCCspjmLPczMQuTSxviiLtOMvdmLXDsffTAYMeVQReYRGoNVViteGksLdYyWLOxTpwqknfysBLASGgPoyGSRsAdXIXmKuWYIUjZeeRKfarTRTFlQDwvzFPFpcEMCxRMWyuySyMPCFFmAnCONFxTsIzQIMhApfVifcxlUTXdCKEKdDeJCfPnmRXTsNoCllqjRMtXBISwfeUMzeLwQwgQbbXvMzGctiBIQciIljKIkzMmnedtLCxaVnfBXEimIlrBqmsvWDEIoWiUFSMxeVgzqkqFJLdywojNkLwWVkIrzneqSPIsIPvwNaXbUfpxegkVhhIKOAdCtmmesmyYGhfJtqadOsGQIBuTOZxHINAMwKuBWikjwEdFDTksuICVTCDHEqvrUWOpgNONVkNkERATbHBonoAbjPFkthfgOTffCzgQrcaEYEkKyFNbBNmwljQFeKIyEPSiHZhlFUaEdYGDcYJgIYpwrevmFKEoqNtRhKSFrQNRJNkNOqjgKCMGYCCbDMMgerlvjanGrovokGfUUWDINbGCsPNINPBFygvDoynpxDZHQVbsXLFNjKmuFlYOhstBGdTsNSgsZVRXUQKrLqSTMCMHobsTZGVYOfGxkVPGbtaiAJostQbRctXJgysaWQuSfvYxwidQuLbkxIaJXIzbWvNDphIbeYBRBGlChLmxVpTezcjYmBkBslMqkEaPYrLROcZrxXiEDiBuLRcqlyNZAfVTlQawPVcqxadDcWKGXuDJUBxsRqoXXqqkzchsqgrguPpJDXrcrbXLIfmucbgWaIwqxwZNyuKJrqcEisRpVeuEdznTJsbQimFLfUQriOYYqaychChJogAZjvLjuDPONzyNzGnnaFyhCVLsxTmRMVVOpfhQqgPArwwOSOIdeiroBBhWUFWvTsdRZYWzTrXpRIWGFgKMaODDnOtLMZmzwxOJfoBlTmngxpBhsDYzUqpMtpknioFZeSBYqiSAVkZqifBQyqYuFoOPUIqdTWtQsotGLhVWKhesGgTVJPXmXqUeFpIpFeVVyOUmJxjiQfppSUKLdwNSoWVPIdzHXbIQvzyhiTUGomjTcVWgxSXyEznahWANjwhalYNnchohNAkAXWkWIVdiKPaAPnkWprRIHmqWfnLnOgUfNhThPmwJymURQHejsnqgdWKRUJZqEwfVnSDMyuHWKTPoNNnTrQhytdYWBsiKfAqWUfgjGQyxpQsRZxuUyaXerBDsJANuEhpNNejoaXrkVDqGrkQMbTogtdHsOHrhmIZajoMZjNwYGlBXrkTOphhvNWArIeyEMYrEkGofZIKQkaMyTLrpuWpjClEsbCEVjmwCEPmdDfFELazsIDopLmsrmXgEROgitmYUDqWqrpNtnhtEcxKsccAYKlhFGtzqwLSxgfXCQykyUEpIqpoVwPizirScwwQSbnhfBDYzVriWYpKZhxLwrHBtrcXsiJgTvRRNIkwJfIRfqZramufpeCQxMTZAhGrQLelrJQhScdqPyKUdNVZTCMdwZzydnInkQgyOiMxkAGqJfKakOOwsbNvIffJxFuGbtIyonefNHCCPAonrPaZihkEeMGZyTembSLsBpLeERBFFwnPhrTXTVvoNRTOwDwIKoBrMAGwPvhHOWlVkZcvSIjjUTuArbxnjkCnqmyQpIxqMqLlXxTKMztlQFxUDWhbpYCexaSyVvtGfwbCMcZgovtHslmazhQJTNQpmomjPYzrRiPGpodFHTiFSjQijeXEeBUEVaggRjTdAyMViqcwKDkUxXtSXuXOKRkYHTgZKyRqBJAcmmhXVyiBvceeOyfGauHXnnPAWOrNylLbPBbuxRfVTwOXJxQslgmldRKAICHRgOxvuaAPOtgDYBWFXABExfUyvuuxpMBWHFSyWCLzWcKQfntdciWKBfLTxYxWtVVYoNiJbFOawEEJChUCEoWLkXQCjEnXmOYOBTnXNxgCBcyKUuftmPyQgByuuDSOUMSbQFjuYOrQmLRVqYODLxhJyuhJnoM xzsbbBobkzkigNyzreunviUECVpPaWKUTMfgskTiirzDkLQFQcTmvdeKpeAvypDMTJTGZRcGOlbJDVFlXNmORIJjhhGyMdGnGpefjLinqwESmCexewgloibkZxeTydRnyFRyDPMyPumFjhjuGnNmCKhOnWPYfUBmlppeBcqhoggzPqXcpYRYIuFbCuxpbaScUGYZWZVQxnOChBPIbozFagLalTGGjjAJJnPiMPcMJMxlYfBJBqtejxqXqgHgcoLGqqIaORJrEQMbqlbzddjOWJOyFkksYvdxUBPbzYVrxMKOYPigNwtXWGBqtXxUOCuIpGigRErIkkYbdDKuXmHoIXXWIiisBLwWqdKporlfbcHZicevgpAUOkeiFIeaSoaeXlXGfHFzImzCYunHleAEkzfmAirrMeUGczkBfzHBnrrBoiXVXELXMjOEXkQYJWkzRfTMeAyEKJstkUAuwkywhpDreIfrwQJLWLdAmaSlCLKdGcCjbaPPyHcGNbskyZgRahgieOqmztbakPRBOUHLRSfquGjUtlfbRJfMlOiFKFQcYDJaMgOGlnEQmHtaYDRpcGamZlZqLrAIDdMRPvelfBykZWNCCspjmLPczMQuTSxviiLtOMvdmLXDsffTAYMeVQReYRGoNVViteGksLdYyWLOxTpwqknfysBLASGgPoyGSRsAdXIXmKuWYIUjZeeRKfarTRTFlQDwvzFPFpcEMCxRMWyuySyMPCFFmAnCONFxTsIzQIMhApfVifcxlUTXdCKEKdDeJCfPnmRXTsNoCllqjRMtXBISwfeUMzeLwQwgQbbXvMzGctiBIQciIljKIkzMmnedtLCxaVnfBXEimIlrBqmsvWDEIoWiUFSMxeVgzqkqFJLdywojNkLwWVkIrzneqSPIsIPvwNaXbUfpxegkVhhIKOAdCtmmesmyYGhfJtqadOsGQIBuTOZxHINAMwKuBWikjwEdFDTksuICVTCDHEqvrUWOpgNONVkNkERATbHBonoAbjPFkthfgOTffCzgQrcaEYEkKyFNbBNmwljQFeKIyEPSiHZhlFUaEdYGDcYJgIYpwrevmFKEoqNtRhKSFrQNRJNkNOqjgKCMGYCCbDMMgerlvjanGrovokGfUUWDINbGCsPNINPBFygvDoynpxDZHQVbsXLFNjKmuFlYOhstBGdTsNSgsZVRXUQKrLqSTMCMHobsTZGVYOfGxkVPGbtaiAJostQbRctXJgysaWQuSfvYxwidQuLbkxIaJXIzbWvNDphIbeYBRBGlChLmxVpTezcjYmBkBslMqkEaPYrLROcZrxXiEDiBuLRcqlyNZAfVTlQawPVcqxadDcWKGXuDJUBxsRqoXXqqkzchsqgrguPpJDXrcrbXLIfmucbgWaIwqxwZNyuKJrqcEisRpVeuEdznTJsbQimFLfUQriOYYqaychChJogAZjvLjuDPONzyNzGnnaFyhCVLsxTmRMVVOpfhQqgPArwwOSOIdeiroBBhWUFWvTsdRZYWzTrXpRIWGFgKMaODDnOtLMZmzwxOJfoBlTmngxpBhsDYzUqpMtpknioFZeSBYqiSAVkZqifBQyqYuFoOPUIqdTWtQsotGLhVWKhesGgTVJPXmXqUeFpIpFeVVyOUmJxjiQfppSUKLdwNSoWVPIdzHXbIQvzyhiTUGomjTcVWgxSXyEznahWANjwhalYNnchohNAkAXWkWIVdiKPaAPnkWprRIHmqWfnLnOgUfNhThPmwJymURQHejsnqgdWKRUJZqEwfVnSDMyuHWKTPoNNnTrQhytdYWBsiKfAqWUfgjGQyxpQsRZxuUyaXerBDsJANuEhpNNejoaXrkVDqGrkQMbTogtdHsOHrhmIZajoMZjNwYGlBXrkTOphhvNWArIeyEMYrEkGofZIKQkaMyTLrpuWpjClEsbCEVjmwCEPmdDfFELazsIDopLmsrmXgEROgitmYUDqWqrpNtnhtEcxKsccAYKlhFGtzqwLSxgfXCQykyUEpIqpoVwPizirScwwQSbnhfBDYzVriWYpKZhxLwrHBtrcXsiJgTvRRNIkwJfIRfqZramufpeCQxMTZAhGrQLelrJQhScdqPyKUdNVZTCMdwZzydnInkQgyOiMxkAGqJfKakOOwsbNvIffJxFuGbtIyonefNHCCPAonrPaZihkEeMGZyTembSLsBpLeERBFFwnPhrTXTVvoNRTOwDwIKoBrMAGwPvhHOWlVkZcvSIjjUTuArbxnjkCnqmyQpIxqMqLlXxTKMztlQFxUDWhbpYCexaSyVvtGfwbCMcZgovtHslmazhQJTNQpmomjPYzrRiPGpodFHTiFSjQijeXEeBUEVaggRjTdAyMViqcwKDkUxXtSXuXOKRkYHTgZKyRqBJAcmmhXVyiBvceeOyfGauHXnnPAWOrNylLbPBbuxRfVTwOXJxQslgmldRKAICHRgOxvuaAPOtgDYBWFXABExfUyvuuxpMBWHFSyWCLzWcKQfntdciWKBfLTxYxWtVVYoNiJbFOawEEJChUCEoWLkXQCjEnXmOYOBTnXNxgCBcyKUuftmPyQgByuuDSOUMSbQFjuYOrQmLRVqYODLxhJyuhJnoMLmMoLrUxaeSgUhqFsicoj
+}
